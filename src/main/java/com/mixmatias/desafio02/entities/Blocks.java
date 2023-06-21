@@ -10,13 +10,15 @@ import java.time.Instant;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tb_blocks")
+@Table(name = "tb_block")
 public class Blocks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant start;
-    private Instant end;
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private Instant end_date;
 
     @ManyToOne
     @JoinColumn(name = "activity_id")

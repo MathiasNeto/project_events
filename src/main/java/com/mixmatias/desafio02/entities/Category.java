@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -21,5 +22,5 @@ public class Category {
     private String description;
 
     @OneToMany(mappedBy = "category")
-    private Set<Activity> activity = new HashSet<>();
+    private List<Activity> activity = new ArrayList<>();
 }
